@@ -3,9 +3,12 @@ import Header from "./component /Header";
 function App() {
   return (
     <>
-      <Header />
-      <Header />
-      <Header />
+      <Header
+      name="Krish"/>
+      <Header
+      name="Karthik"/>
+      <Header
+      name="Karan"/>
     </>
   )
 }
