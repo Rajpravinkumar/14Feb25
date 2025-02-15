@@ -1,16 +1,12 @@
-import Header from "./component /Header";
+
+import B from "./component /B";
+
 
 const App = () => {
-  
-  const sendMessage = (msg) => {
-    console.log(msg);
-  }
-
-  return (
-    <>
-      <Header sendMessage={sendMessage}
-      />
-    </>
-  )
+  const time = new Date().toLocaleTimeString();
+  return <B
+    time= {time}
+  />
 }
-export default App;
+
+export default App
