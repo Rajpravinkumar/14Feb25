@@ -1,12 +1,9 @@
-import ChildComponent from "./component /childComponent";
+import React from "react";
 
-
-const App = () => {
-
-  const messageFromChild = (message) => {
-    console.log(message);
+class App extends React.Component {
+  render() {
+    return <h1> Hello World!</h1>
   }
-  return <ChildComponent messageFromChild={messageFromChild} />
 }
 
-export default App
+export default App;
