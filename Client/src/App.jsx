@@ -1,14 +1,15 @@
 import Header from "./component /Header";
 
-function App() {
+const App = () => {
+  
+  const sendMessage = (msg) => {
+    console.log(msg);
+  }
+
   return (
     <>
-      <Header
-      name="Krish"/>
-      <Header
-      name="Karthik"/>
-      <Header
-      name="Karan"/>
+      <Header sendMessage={sendMessage}
+      />
     </>
   )
 }
