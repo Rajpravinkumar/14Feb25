@@ -1,24 +1,23 @@
-const App = () => {
+import { useMemo, useState } from "react";
 
-  const [count, setCount] = useState(0);
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0);
+const usememo = () => {
+  const [state, setState] = useState(0);
 
-  const handleIncrease = () => {
-    if (count < 10) {
-      setCount(count + 1);
+  let computedValue = useMemo(() => {
+    let sum = 0;
+
+    for (let i = 0; i < 1000000; i++) {
+      sum += i;
     }
-  function handleLike() {
-    setLikes(likes + 1);
-  }
 
-  const handleDecrease = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  }
-  const handleReset = () => {
-    setCount(0);
-  function handleDislike() {
-    setDislikes(dislikes + 1);
-  }
+    return sum + state;
+  }, [state]);
+  return (
+    <div>
+      <h1>Computed Value: {computedValue}</h1>
+      <button onClick={() => setState + 1}>Update State</button>
+    </div>
+  );
+};
+
+export default usememo;
