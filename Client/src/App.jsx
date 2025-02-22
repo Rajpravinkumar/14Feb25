@@ -1,23 +1,21 @@
-import { useMemo, useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
-const usememo = () => {
-  const [state, setState] = useState(0);
 
-  let computedValue = useMemo(() => {
-    let sum = 0;
+const App = () => {
 
-    for (let i = 0; i < 1000000; i++) {
-      sum += i;
+  const router = createBrowserRouter([
+    {
+      path: '/', 
+      element : <h1> Hello World!</h1>
+    },
+
+    {
+      path: "/Contact",
+      element: <h1> Contact Us </h1>
     }
+  ])
+  return <RouterProvider router={router} />
+   
+}
 
-    return sum + state;
-  }, [state]);
-  return (
-    <div>
-      <h1>Computed Value: {computedValue}</h1>
-      <button onClick={() => setState + 1}>Update State</button>
-    </div>
-  );
-};
-
-export default usememo;
+export default App
